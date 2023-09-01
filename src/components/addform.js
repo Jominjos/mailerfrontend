@@ -15,18 +15,41 @@ export default function Addform() {
     console.log(uservalue);
   }
 
-  async function formsubmit(event) {
-    try {
-      event.preventDefault();
-      const res = await axios.post("https://jodemailer.onrender.com/user", {
-        name: "axios",
-        age: "33",
-        Email: "hemanth@gmail.com",
+  fetch("https://jodemailer.onrender.com/db")
+    .then((response) => response.json())
+    .then((data) => {
+      // Use the data fetched from the server
+      console.log(data);
+    })
+    .catch((error) => {
+      // Handle any errors that occur during the fetch
+      console.error(error);
+    });
+
+  function formsubmit(event) {
+    event.preventDefault();
+    fetch("https://jodemailer.onrender.com/user", {
+      method: "POST", // Specify the HTTP method as POST
+      headers: {
+        "Content-Type": "application/json", // Set the content type for JSON data
+        // You may need to include additional headers if required by the server
+      },
+      body: JSON.stringify(uservalue), // Convert data to a JSON string
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json(); // Parse the response as JSON
+      })
+      .then((responseData) => {
+        // Handle the response data here
+        console.log(responseData);
+      })
+      .catch((error) => {
+        // Handle any errors that occur during the fetch or JSON parsing
+        console.error(error);
       });
-      console.log(res);
-    } catch (err) {
-      console.error(err);
-    }
   }
   return (
     <div>
