@@ -14,7 +14,7 @@ export default function Addform() {
     axios
       .get("https://jodemailer.onrender.com/db")
       .then((res) => setOldDb(res));
-    console.log(oldDb, `from useeff`);
+    console.log(`from useeff`);
   }, []);
 
   function userchange(event) {
