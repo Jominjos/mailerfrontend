@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Addform() {
   let initialuser = {
@@ -7,6 +8,14 @@ export default function Addform() {
     Email: "",
   };
   const [uservalue, setuservalue] = useState(initialuser);
+  const[oldDb, setOldDb] = useState([]);
+  const [formsubBool , setFormsubBool]=useState(true);
+  useEffect(() => {
+    axios.get('https://jodemailer.onrender.com/db')
+    .then(res => setOldDb(res))
+    console.log(oldDb,`from useeff`)
+  },[formsubBool])
+  
   function userchange(event) {
     let eventValue = event.target.value;
     let eventName = event.target.name;
@@ -37,6 +46,7 @@ export default function Addform() {
 
   function formsubmit(event) {
     event.preventDefault();
+
     fetch("https://jodemailer.onrender.com/user", {
       method: "POST", // Specify the HTTP method as POST
       headers: {
@@ -59,6 +69,7 @@ export default function Addform() {
         // Handle any errors that occur during the fetch or JSON parsing
         console.error(error);
       });
+      setFormsubBool(!formsubBool);
   }
   return (
     <div className="addUser">
@@ -68,6 +79,7 @@ export default function Addform() {
           <label>name</label>
           <input
             onChange={userchange}
+            required
             id="name"
             placeholder="name"
             value={uservalue.name}
@@ -79,6 +91,8 @@ export default function Addform() {
           <input
             onChange={userchange}
             id="age"
+            required
+            type="number"
             placeholder="age"
             value={uservalue.age}
             name="age"x
@@ -88,6 +102,8 @@ export default function Addform() {
           <label>email</label>
           <input
             onChange={userchange}
+            type="email"
+            required
             id="email"
             placeholder="email"
             value={uservalue.Email}
