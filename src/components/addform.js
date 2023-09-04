@@ -10,9 +10,19 @@ export default function Addform() {
   function userchange(event) {
     let eventValue = event.target.value;
     let eventName = event.target.name;
-    setuservalue({ ...uservalue, [eventName]: eventValue });
-    console.log(uservalue);
+    // const{value, name} = event.target
+    // setuservalue({ ...uservalue, [eventName]: eventValue });
+    setuservalue((prev) => {
+      return {
+        ...prev,
+        [eventName] : eventValue,     
+      }
+         
+    })
+      
   }
+  console.log(uservalue)
+  
 
   fetch("https://jodemailer.onrender.com/db")
     .then((response) => response.json())
@@ -51,10 +61,10 @@ export default function Addform() {
       });
   }
   return (
-    <div>
-      <h1>add user</h1>
-      <form id="form1" onSubmit={formsubmit}>
-        <div>
+    <div className="addUser">
+      <h2 >add user</h2>
+      <form id="form1" className="form1" onSubmit={formsubmit}>
+        <div className="input-box">
           <label>name</label>
           <input
             onChange={userchange}
@@ -64,17 +74,17 @@ export default function Addform() {
             name="name"
           ></input>
         </div>
-        <div>
+        <div className="input-box">
           <label>age</label>
           <input
             onChange={userchange}
             id="age"
             placeholder="age"
             value={uservalue.age}
-            name="age"
+            name="age"x
           ></input>
         </div>
-        <div>
+        <div className="input-box">
           <label>email</label>
           <input
             onChange={userchange}
@@ -85,7 +95,7 @@ export default function Addform() {
           ></input>
         </div>
         <div>
-          <input type="submit" />
+          <input type="submit" className="btn btn-primary"/>
         </div>
       </form>
     </div>

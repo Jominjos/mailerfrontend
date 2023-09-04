@@ -13,11 +13,11 @@ export default function Deleteuser() {
     console.log(delUser);
   }
   return (
-    <>
-      <h1>Delete User</h1>
+    <div className="deleteUser">
+      <h2>Delete User</h2>
 
-      <form id="delForm" onSubmit={OnDelete}>
-        <div>
+      <form id="delForm" className="delForm" onSubmit={OnDelete}>
+        <div className="input-box">
           <label>userName</label>
           <input
             placeholder="name"
@@ -27,9 +27,9 @@ export default function Deleteuser() {
           ></input>
         </div>
         <div>
-          <button type="submit">Delete</button>
+          <button type="submit" className="btn btn-danger">Delete</button>
         </div>
       </form>
-    </>
+    </div>
   );
 }
