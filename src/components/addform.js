@@ -8,14 +8,15 @@ export default function Addform() {
     Email: "",
   };
   const [uservalue, setuservalue] = useState(initialuser);
-  const[oldDb, setOldDb] = useState([]);
-  const [formsubBool , setFormsubBool]=useState(true);
+  const [oldDb, setOldDb] = useState([]);
+  const [formsubBool, setFormsubBool] = useState(true);
   useEffect(() => {
-    axios.get('https://jodemailer.onrender.com/db')
-    .then(res => setOldDb(res))
-    console.log(oldDb,`from useeff`)
-  },[formsubBool])
-  
+    axios
+      .get("https://jodemailer.onrender.com/db")
+      .then((res) => setOldDb(res));
+    console.log(oldDb, `from useeff`);
+  }, []);
+
   function userchange(event) {
     let eventValue = event.target.value;
     let eventName = event.target.name;
@@ -24,14 +25,11 @@ export default function Addform() {
     setuservalue((prev) => {
       return {
         ...prev,
-        [eventName] : eventValue,     
-      }
-         
-    })
-      
+        [eventName]: eventValue,
+      };
+    });
   }
-  console.log(uservalue)
-  
+  console.log(uservalue);
 
   fetch("https://jodemailer.onrender.com/db")
     .then((response) => response.json())
@@ -69,11 +67,11 @@ export default function Addform() {
         // Handle any errors that occur during the fetch or JSON parsing
         console.error(error);
       });
-      setFormsubBool(!formsubBool);
+    setFormsubBool(!formsubBool);
   }
   return (
     <div className="addUser">
-      <h2 >add user</h2>
+      <h2>add user</h2>
       <form id="form1" className="form1" onSubmit={formsubmit}>
         <div className="input-box">
           <label>name</label>
@@ -95,7 +93,8 @@ export default function Addform() {
             type="number"
             placeholder="age"
             value={uservalue.age}
-            name="age"x
+            name="age"
+            x
           ></input>
         </div>
         <div className="input-box">
@@ -111,7 +110,7 @@ export default function Addform() {
           ></input>
         </div>
         <div>
-          <input type="submit" className="btn btn-primary"/>
+          <input type="submit" className="btn btn-primary" />
         </div>
       </form>
     </div>
