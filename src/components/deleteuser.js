@@ -5,6 +5,7 @@ export default function Deleteuser() {
   function OnDelete(event) {
     event.preventDefault();
     let userDel = event.target.value;
+    console.log("hi");
     console.log(userDel);
     console.log(`ondel`);
   }
