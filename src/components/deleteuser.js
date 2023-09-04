@@ -4,6 +4,8 @@ export default function Deleteuser() {
   const [delUser, setdelUser] = useState({ name: "" });
   function OnDelete(event) {
     event.preventDefault();
+    let userDel = event.target.value;
+    console.log(userDel);
     console.log(`ondel`);
   }
   function delUserChange(event) {
@@ -27,7 +29,9 @@ export default function Deleteuser() {
           ></input>
         </div>
         <div>
-          <button type="submit" className="btn btn-danger">Delete</button>
+          <button type="submit" className="btn btn-danger">
+            Delete
+          </button>
         </div>
       </form>
     </div>
