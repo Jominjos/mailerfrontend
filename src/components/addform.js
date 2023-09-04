@@ -8,14 +8,8 @@ export default function Addform() {
     Email: "",
   };
   const [uservalue, setuservalue] = useState(initialuser);
-  const [oldDb, setOldDb] = useState([]);
+  //const [oldDb, setOldDb] = useState([]);
   const [formsubBool, setFormsubBool] = useState(true);
-  useEffect(() => {
-    axios
-      .get("https://jodemailer.onrender.com/db")
-      .then((res) => setOldDb(res));
-    console.log(`from useeff`);
-  }, []);
 
   function userchange(event) {
     let eventValue = event.target.value;
