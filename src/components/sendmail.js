@@ -24,12 +24,10 @@ export default function Sendmail() {
     setContent(intial);
     mailsender();
     async function mailsender() {
-      let requestu = JSON.stringify(content);
       let res = await axios.post(
         "https://jodemailer.onrender.com/sendmail",
-        {
-          requestu,
-        },
+
+        { content },
         {
           "Content-Type": "application/json",
         }
