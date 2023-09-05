@@ -64,40 +64,40 @@ export default function Addform() {
   }
   return (
     <div className="addUser">
-      <h2>add user</h2>
+      <h2>ADD USER</h2>
       <form id="form1" className="form1" onSubmit={formsubmit}>
         <div className="input-box">
-          <label>name</label>
+          <label>Name</label>
           <input
             onChange={userchange}
             required
             id="name"
-            placeholder="name"
+            placeholder="Name"
             value={uservalue.name}
             name="name"
           ></input>
         </div>
         <div className="input-box">
-          <label>age</label>
+          <label>Age</label>
           <input
             onChange={userchange}
             id="age"
             required
             type="number"
-            placeholder="age"
+            placeholder="Age"
             value={uservalue.age}
             name="age"
             x
           ></input>
         </div>
         <div className="input-box">
-          <label>email</label>
+          <label>Email</label>
           <input
             onChange={userchange}
             type="email"
             required
             id="email"
-            placeholder="email"
+            placeholder="mail id"
             value={uservalue.Email}
             name="Email"
           ></input>

@@ -17,11 +17,11 @@ export default function Deleteuser() {
   }
   return (
     <div className="deleteUser">
-      <h2>Delete User</h2>
+      <h2>DELETE USER</h2>
 
       <form id="delForm" className="delForm" onSubmit={OnDelete}>
         <div className="input-box">
-          <label>userName</label>
+          <label>UserName</label>
           <input
             placeholder="name"
             name="name"
