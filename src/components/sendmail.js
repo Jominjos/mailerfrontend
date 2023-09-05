@@ -33,7 +33,7 @@ export default function Sendmail() {
         }
       );
       alert(`mail send successfully`);
-      // console.log(res);
+      console.log(res);
     }
     console.log(content, "form submitted");
   }
