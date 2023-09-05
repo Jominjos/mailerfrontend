@@ -39,7 +39,7 @@ export default function Sendmail() {
   }
   return (
     <div className="addUser">
-      <h1>SEND MAIL</h1>
+      <h2>SEND MAIL</h2>
       <form onSubmit={sendmail}>
         <div className="input-box">
           <label>Subject</label>
