@@ -32,7 +32,8 @@ export default function Sendmail() {
           "Content-Type": "application/json",
         }
       );
-      console.log(res);
+      alert(`mail send successfully`);
+      // console.log(res);
     }
     console.log(content, "form submitted");
   }
@@ -53,6 +54,7 @@ export default function Sendmail() {
         </div>
         <div className="input-box">
           <label>Content</label>
+
           <textarea
             type="text"
             onChange={maildatachanged}

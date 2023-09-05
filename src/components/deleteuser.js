@@ -14,6 +14,7 @@ export default function Deleteuser() {
           ? alert(`succesfully deleted user ${delUser.name}`)
           : alert(`invalid username ${delUser.name}`)
       );
+    setdelUser({ name: "" });
   }
   function delUserChange(event) {
     event.preventDefault();
