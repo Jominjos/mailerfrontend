@@ -1,13 +1,19 @@
 import { useState } from "react";
+import axios from "axios";
 
 export default function Deleteuser() {
   const [delUser, setdelUser] = useState({ name: "" });
   function OnDelete(event) {
     event.preventDefault();
-    let userDel = event.target.value;
-    console.log("hi");
-    console.log(userDel);
-    console.log(`ondel`);
+    axios
+      .delete(`https://jodemailer.onrender.com/delete/${delUser.name}`)
+      .then((response) => response.data)
+      // .then(respp => console.log(respp.deletedCount))
+      .then((resp) =>
+        Number(resp.deletedCount) > 0
+          ? alert(`succesfully deleted user ${delUser.name}`)
+          : alert(`invalid username ${delUser.name}`)
+      );
   }
   function delUserChange(event) {
     event.preventDefault();
