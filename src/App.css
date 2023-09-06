@@ -52,7 +52,8 @@ label {
   /* font-variant:small-caps ; */
   color: #2f4f4f;
 }
-input {
+input,
+textarea {
   width: 100%;
   padding: 0 12px;
   border: 1px solid #ccc;
@@ -73,6 +74,12 @@ input:focus {
 .btn-primary {
   background-image: linear-gradient(to right, #61045f, #aa076b);
   transition: all 2s linear;
+}
+.head {
+  /* margin: 0 auto; */
+  /* align-items: center; */
+  text-align: center;
+  color: #fff;
 }
 .btn-danger {
   background-image: linear-gradient(
@@ -105,7 +112,7 @@ input:focus {
     flex-direction: column;
     height: 100%;
     background-color: rgb(255, 255, 255);
-    margin: 0;
+    margin: auto;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;

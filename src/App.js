@@ -7,11 +7,14 @@ import Dbtable from "./components/userdb";
 
 function App() {
   return (
-    <div className="App">
-      <Addform />
-      <Deleteuser />
-      <Sendmail />
-      <Dbtable />
+    <div>
+      <h1 className="head">Jode Mailer</h1>
+      <div className="App">
+        <Addform />
+        <Deleteuser />
+        <Sendmail />
+        <Dbtable />
+      </div>
     </div>
   );
 }

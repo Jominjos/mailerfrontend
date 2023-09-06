@@ -37,6 +37,7 @@ export default function Addform() {
 
   function formsubmit(event) {
     event.preventDefault();
+    setuservalue(initialuser)
 
     fetch("https://jodemailer.onrender.com/user", {
       method: "POST", // Specify the HTTP method as POST
