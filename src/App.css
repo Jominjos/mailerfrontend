@@ -75,6 +75,16 @@ input:focus {
   background-image: linear-gradient(to right, #61045f, #aa076b);
   transition: all 2s linear;
 }
+.head {
+  /* margin: 0 auto; */
+  /* align-items: center; */
+  text-align: center;
+  color: #fff;
+  font-size: 9vw;
+  font-weight: 600;
+  padding-top: 10px;
+  font-family: sans-serif;
+}
 .btn-danger {
   background-image: linear-gradient(
     to right,
@@ -106,7 +116,6 @@ input:focus {
     flex-direction: column;
     height: 100%;
     background-color: rgb(255, 255, 255);
-    margin: 0;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
