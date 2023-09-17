@@ -23,17 +23,6 @@ export default function Addform({ userChange = {}, setUserChange = {} }) {
   }
   console.log(uservalue);
 
-  fetch("https://jodemailer.onrender.com/db")
-    .then((response) => response.json())
-    .then((data) => {
-      // Use the data fetched from the server
-      console.log(data);
-    })
-    .catch((error) => {
-      // Handle any errors that occur during the fetch
-      console.error(error);
-    });
-
   function formsubmit(event) {
     event.preventDefault();
     setuservalue(initialuser);
