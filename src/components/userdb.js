@@ -10,7 +10,6 @@ export default function Dbtable({ userChange = {} }) {
       .then((response) => setDb(response.data));
   };
 
-  fetchInfo();
   useEffect(() => {
     fetchInfo();
     // console.log(db)
