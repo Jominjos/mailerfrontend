@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Addform() {
+export default function Addform({ userChange = {}, setUserChange = {} }) {
   let initialuser = {
     name: "",
     age: "",
@@ -8,7 +8,6 @@ export default function Addform() {
   };
   const [uservalue, setuservalue] = useState(initialuser);
   //const [oldDb, setOldDb] = useState([]);
-  const [formsubBool, setFormsubBool] = useState(true);
 
   function userchange(event) {
     let eventValue = event.target.value;
@@ -37,7 +36,7 @@ export default function Addform() {
 
   function formsubmit(event) {
     event.preventDefault();
-    setuservalue(initialuser)
+    setuservalue(initialuser);
 
     fetch("https://jodemailer.onrender.com/user", {
       method: "POST", // Specify the HTTP method as POST
@@ -61,7 +60,7 @@ export default function Addform() {
         // Handle any errors that occur during the fetch or JSON parsing
         console.error(error);
       });
-    setFormsubBool(!formsubBool);
+    setUserChange = !userChange;
   }
   return (
     <div className="addUser">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default function Deleteuser() {
+export default function Deleteuser({ userChange = {}, setUserChange = {} }) {
   const [delUser, setdelUser] = useState({ name: "" });
   function OnDelete(event) {
     event.preventDefault();
@@ -15,6 +15,7 @@ export default function Deleteuser() {
           : alert(`invalid username ${delUser.name}`)
       );
     setdelUser({ name: "" });
+    setUserChange = !userChange;
   }
   function delUserChange(event) {
     event.preventDefault();
