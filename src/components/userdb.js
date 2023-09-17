@@ -4,17 +4,13 @@ import { useEffect, useState } from "react";
 
 export default function Dbtable({ userChange = {} }) {
   const [db, setDb] = useState("");
-  const fetchInfo = () => {
+
+  useEffect(() => {
     axios
       .get("https://jodemailer.onrender.com/db")
       .then((response) => setDb(response.data));
-  };
-
-  useEffect(() => {
-    fetchInfo();
-    // console.log(db)
   }, [userChange]);
-  // console.log(db)
+
   return (
     <table>
       <thead>
