@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
-export default function Addform({ userChange = {}, setUserChange = {} }) {
+import "../styles/add.css";
+export default function Addform({ userChange, setUserChange }) {
   let initialuser = {
     name: "",
     age: "",
@@ -45,15 +45,18 @@ export default function Addform({ userChange = {}, setUserChange = {} }) {
         // Handle the response data here
         console.log(responseData);
       })
+      .then(() => {
+        setUserChange((prev) => !prev);
+      })
+
       .catch((error) => {
         // Handle any errors that occur during the fetch or JSON parsing
         console.error(error);
       });
-    setUserChange = !userChange;
   }
   return (
     <div className="addUser">
-      <h2>ADD USER</h2>
+      <h2 id="addHeading">ADD USER</h2>
       <form id="form1" className="form1" onSubmit={formsubmit}>
         <div className="input-box">
           <label>Name</label>

@@ -1,0 +1,11 @@
+#form1 {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#addHeading {
+  text-align: center;
+}

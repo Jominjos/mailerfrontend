@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-
+import "../styles/send.css";
 export default function Sendmail() {
   let intial = {
     sub: " ",
@@ -38,8 +38,8 @@ export default function Sendmail() {
     console.log(content, "form submitted");
   }
   return (
-    <div className="addUser">
-      <h2>SEND MAIL</h2>
+    <div className="sendMail">
+      <h2 id="sendHeading">SEND MAIL</h2>
       <form onSubmit={sendmail}>
         <div className="input-box">
           <label>Subject</label>
@@ -66,7 +66,7 @@ export default function Sendmail() {
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          send mail to all users
+          Send To All Users
         </button>
       </form>
     </div>

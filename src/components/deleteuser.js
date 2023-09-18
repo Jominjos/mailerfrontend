@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-
-export default function Deleteuser({ userChange = {}, setUserChange = {} }) {
+import "../styles/del.css";
+export default function Deleteuser({ userChange, setUserChange }) {
   const [delUser, setdelUser] = useState({ name: "" });
   function OnDelete(event) {
     event.preventDefault();
@@ -13,9 +13,11 @@ export default function Deleteuser({ userChange = {}, setUserChange = {} }) {
         Number(resp.deletedCount) > 0
           ? alert(`succesfully deleted user ${delUser.name}`)
           : alert(`invalid username ${delUser.name}`)
-      );
+      )
+      .then(() => {
+        setUserChange((prev) => !prev);
+      });
     setdelUser({ name: "" });
-    setUserChange = !userChange;
   }
   function delUserChange(event) {
     event.preventDefault();
@@ -25,16 +27,17 @@ export default function Deleteuser({ userChange = {}, setUserChange = {} }) {
   }
   return (
     <div className="deleteUser">
-      <h2>DELETE USER</h2>
+      <h2 id="delHeading">DELETE USER</h2>
 
       <form id="delForm" className="delForm" onSubmit={OnDelete}>
         <div className="input-box">
           <label>UserName</label>
           <input
-            placeholder="name"
+            placeholder="Username"
             name="name"
             value={delUser.name}
             onChange={delUserChange}
+            required
           ></input>
         </div>
         <div>
