@@ -15,7 +15,7 @@ function App() {
         <Addform userChange={userChange} setUserChange={setUserChange} />
         <Deleteuser userChange={userChange} setUserChange={setUserChange} />
         <Sendmail userChange={userChange} />
-        <Dbtable />
+        <Dbtable userChange={userChange} />
       </div>
     </div>
   );
