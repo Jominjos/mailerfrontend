@@ -1,7 +1,11 @@
 .head {
   text-align: center;
   font-size: 60px;
-  color: rgb(106, 42, 170);
+  color: rgb(255, 255, 255);
+  background-color: #639;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  font-family: sans-serif;
 }
 
 body {
@@ -11,7 +15,7 @@ body {
   box-shadow: 0 15px 20px #abb2b9;
 }
 html {
-  background-color: #639;
+  background-color: rgb(255, 255, 255);
 }
 
 .App {
@@ -19,7 +23,7 @@ html {
   align-items: center;
   flex-wrap: wrap;
 
-  background-color: #ffffff42;
+  background-color: #639;
 }
 
 .addUser {
