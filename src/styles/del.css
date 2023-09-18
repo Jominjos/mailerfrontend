@@ -4,8 +4,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 80px;
 }
 
 #delHeading {
   text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+  #delForm {
+    margin-top: 0%;
+  }
 }
