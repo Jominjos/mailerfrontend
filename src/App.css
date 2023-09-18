@@ -22,7 +22,7 @@ html {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-
+  height: auto;
   background-color: #639;
 }
 
@@ -43,7 +43,7 @@ html {
   background-color: rgb(255, 255, 255);
   width: 45vw;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   padding: 20px;
   box-shadow: rgba(53, 34, 60, 0.583) 0px 7px 29px 0px;
   border-radius: 15px;
@@ -51,7 +51,7 @@ html {
 
 .sendMail {
   width: 50vw;
-  height: 40vh;
+  height: auto;
   margin-right: 20px;
   background-color: rgb(255, 255, 255);
   padding: 20px;
@@ -64,9 +64,10 @@ html {
 .userDb {
   background-color: rgb(255, 255, 255);
   width: 45vw;
-  height: 40vh;
+  height: auto;
   box-shadow: rgba(67, 44, 83, 0.546) 0px 7px 29px 0px;
-  border-radius: 1px;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 .btn-danger {
@@ -124,7 +125,7 @@ input:focus {
   background-image: linear-gradient(to right, #61045f, #aa076b);
   transition: all 2s linear;
 }
-@media only screen and (max-width: 1140px) {
+@media only screen and (max-width: 1340px) {
   body {
     background-color: rgb(255, 255, 255);
     margin: 2px;

@@ -13,8 +13,8 @@ export default function Dbtable({ userChange }) {
 
   return (
     <div className="userDb">
-      <h2 id="dbHeading">User Database</h2>
-      <table>
+      <h2 id="dbHeading">Users</h2>
+      <table class="table table-striped" id="usertable">
         <thead>
           <tr>
             <th>Name</th>
