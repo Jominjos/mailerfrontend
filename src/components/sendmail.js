@@ -21,21 +21,24 @@ export default function Sendmail() {
   function sendmail(event) {
     event.preventDefault();
     console.log(content, "form submitted");
-    setContent(intial);
-    mailsender();
-    async function mailsender() {
-      let res = await axios.post(
-        "https://jodemailer.onrender.com/sendmail",
+    if (content.sub !== " " && content.content !== " ") {
+      setContent(intial);
+      mailsender();
+      async function mailsender() {
+        let res = await axios.post(
+          "https://jodemailer.onrender.com/sendmail",
 
-        { content },
-        {
-          "Content-Type": "application/json",
-        }
-      );
-      alert(`mail send successfully`);
-      console.log(res);
-    }
-    console.log(content, "form submitted");
+          { content },
+          {
+            "Content-Type": "application/json",
+          }
+        );
+        alert(`mail send successfully`);
+        console.log(res);
+      }
+    } else alert(`kindly enter subject and content`);
+
+    //console.log(content, "form submitted");
   }
   return (
     <div className="sendMail">

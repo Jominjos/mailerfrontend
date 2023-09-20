@@ -9,13 +9,13 @@
 }
 
 body {
-  margin: 10px;
+  margin: 0px;
   border-radius: 5px;
 
   box-shadow: 0 15px 20px #abb2b9;
 }
 html {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(64, 5, 174);
 }
 
 .App {
@@ -131,7 +131,7 @@ input:focus {
 @media only screen and (max-width: 800px) {
   body {
     background-color: rgb(255, 255, 255);
-    margin: 2px;
+    margin: 0px;
   }
   .App {
     display: flex;
